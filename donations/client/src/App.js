@@ -1,27 +1,22 @@
-import React, { Component } from "react";
-import Fundraiser from "./contracts/FundRaising.json";
-import getWeb3 from "./getWeb3";
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import "./App.css";
+
+import Home from './components/Home'
+
 
 class App extends Component {
-  
-async componentWillMount(){
-   document.title = "Donation Tracker"
-  await this.loadweb3()
-  console.log(window.web3)
-  await this.loadBlockchainData()
-}
-
-  
-  
   render() {
     return (
-      <div className="App">
-        Donation Tracker
-      </div>
-    );
+      <Router>
+        <div className="App">
+        
+          <Route exact path="/" component={Home} />
+        
+        </div>
+      </Router>
+    )
   }
 }
 
-export default App;
+export default App
