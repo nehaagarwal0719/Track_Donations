@@ -1,5 +1,5 @@
 pragma solidity ^0.5.1;
-contract fundraising{
+contract FundRaising{
     
     struct fundraiser{
         uint f_id;
@@ -65,7 +65,7 @@ contract fundraising{
     uint public contributorsCount=0;
     uint public ledgerCount=0;
     
-    function addfund(string  memory _name, uint _amount, string memory _des )public{
+    function addFund(string  memory _name, uint _amount, string memory _des )public{
         
         fundraisers[fundraisersCount]=fundraiser(fundraisersCount, _name, _amount,0,_des,msg.sender,false);
         fundraisersCount++;

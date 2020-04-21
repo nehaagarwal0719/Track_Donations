@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import {Link} from "react-router-dom";
 import AddFund from './AddFund.js';
 import Donate from './Donate.js';
-
+import Web3 from 'web3';
+import fundraising from '../contracts/FundRaising.json';
 
 class Home extends Component {
+
   render() {
     return (
       
@@ -27,7 +29,7 @@ class Home extends Component {
 		            <div class="card bg-light">
 		                <div class="card-block">
 		                  <h1 class="card-header text-center text-muted as"> 
-			                  <Link class="nounderline text-dark" to={'/AddFund/'}>Add Funds</Link>
+			                  <Link class="nounderline text-dark" to={'/fund'}>Add Funds</Link>
 		                  </h1>
 		                </div>
 		            </div>
