@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route} from "react-router-dom";
-import {Link} from "react-router-dom";
-import AddFund from './AddFund.js';
-import Donate from './Donate.js';
 import Web3 from 'web3';
 import fundraising from '../contracts/FundRaising.json';
+import DonateMain from './DonateMain';
 
-class Home extends Component {
+class Donate extends Component{
 
-  
 async componentWillMount(){
   await this.loadweb3()
   console.log(window.web3)
@@ -43,7 +39,7 @@ async loadweb3(){
      const fundraisersCount = await fundraiser.methods.fundraisersCount().call()
      this.setState({fundraisersCount})
      for(var i=1;i<=fundraisersCount;i++){
-      const fund= await fundraiser.methods.props(i).call()
+      const fund= await fundraiser.methods.fundraisers(i).call()
       this.setState({
         funds:[...this.state.funds,fund]
       })   
@@ -83,57 +79,21 @@ addFund(name,amount,des) {
 
   }
 
-  render() {
+  render()
+  {
+    console.log('neha')
+    return(
+   <div class ="container">
+      <div class="row">
+        <DonateMain
+        funds ={this.state.funds} 
+           addFund={this.addFund}
     
-    return (
-      
-     <Router>
-        <div>
-          <Route path="/fund" component={AddFund}/>
-          <Route path="/donate" component={Donate}/>
-
-        
-        <h1 class="text-center home-n"> Donation Tracker </h1>
-      
-        <div class="container h-100 home-d">
-        <div class="d-flex h-100 text-center align-items-center">
-        <div class="w-100 text-white">
-            
-          <div class="row">
-
-            <div class="col-sm-6  ">
-                <div class="card bg-light">
-                    <div class="card-block">
-                      <h1 class="card-header text-center text-muted as"> 
-                        <Link class="nounderline text-dark" to={'/AddFund'}>Add Funds</Link>
-                      </h1>
-                    </div>
-                </div>
-            </div>
-
-             <div class="col-sm-6 ">
-              <div class="card">
-                <div class="card-block">
-                  <h1 class="card-header text-center text-muted as"> 
-                      <Link class="nounderline text-dark" to={'/AddDonate'} >Donate </Link>
-                  </h1>
-                </div> 
-              </div>
-            </div>
-
-          </div>
-
-          </div>
+        />
         </div>
-      </div>
+    </div>
+      );
+  }
+}
 
-  
-      </div>
-    </Router>
-
-     )
-    }
- } 
-  
-
-export default Home;  
+export default Donate;

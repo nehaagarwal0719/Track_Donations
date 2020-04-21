@@ -39,7 +39,7 @@ class Home extends Component {
 		          <div class="card">
 		            <div class="card-block">
 		              <h1 class="card-header text-center text-muted as"> 
-		                  <Link class="nounderline text-dark" to={'/AddDonate'} >Donate </Link>
+		                  <Link class="nounderline text-dark" to={'/donate'} >Donate </Link>
 		              </h1>
 		            </div> 
 		          </div>

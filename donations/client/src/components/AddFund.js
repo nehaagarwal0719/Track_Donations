@@ -39,7 +39,7 @@ async loadweb3(){
      const fundraisersCount = await fundraiser.methods.fundraisersCount().call()
      this.setState({fundraisersCount})
      for(var i=1;i<=fundraisersCount;i++){
-      const fund= await fundraiser.methods.props(i).call()
+      const fund= await fundraiser.methods.fundraisers(i).call()
       this.setState({
         funds:[...this.state.funds,fund]
       })   
@@ -87,7 +87,7 @@ addFund(name,amount,des) {
       <div class="row">
         <FundMain funds ={this.state.funds} 
         addFund={this.addFund}
-        funds ={this.state.funds}
+        
         />
         </div>
     </div>
