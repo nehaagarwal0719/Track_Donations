@@ -6,6 +6,9 @@ import Home from './components/Home';
 import AddFund from  './components/AddFund';
 import Donate from './components/Donate';
 import Profile from './components/Profile';
+import Details from './components/details';
+import Contribute from './components/Contribute';
+
 
 class App extends Component {
   render() {
@@ -16,8 +19,10 @@ class App extends Component {
          <Route exact path="/" component={Home} />
          <div className="container">
          <Route exact path="/fund" component={AddFund} />
-         <Route exact path="/donate" component={Donate} />
-         <Route exact path="/profile" component={Profile} />
+         <Route exact path="/donate/" component={Donate} />
+         <Route exact path="/profile/" component={Profile} />
+         <Route exact path="/details/" component={Details} />
+         <Route exact path="/Contribute/" component={Contribute} />
         </div>
         </div>
       </Router>

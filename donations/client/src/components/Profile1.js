@@ -124,15 +124,15 @@ constructor (props){
                     </div>
 
                     <div class="tab-pane" id="donationdetails">
-                      lets donate
+                      Code not written
                     </div> 
 
                     <div class="tab-pane" id="spend">
-                   lets spend
+                      Code not written
                     </div> 
 
 
-                  <div class="tab-pane" id="verify_fund">
+                  <div class="tab-pane active" id="verify_fund">
 
                            {this.props.funds.map((fund,key)=>{
                             if(fund.status==false && fund.f_id>=1){
@@ -144,13 +144,13 @@ constructor (props){
                                     </div>
 
                                     <div class="form-group row">
-                                      <label class="col-lg-4 col-form-label form-control-label">Funf Name</label>
+                                      <label class="col-lg-4 col-form-label form-control-label">Fund Name</label>
                                       <label className="col-lg-8 col-form-label form-control-label">{fund.name}</label>
                                     </div>
 
                                     <div class="form-group row">
                                       <label class="col-lg-4 col-form-label form-control-label">Fund Status</label>
-                                      <label className="col-lg-8 col-form-label form-control-label">{fund.status==true?<p>approved</p>:<p>not</p>}</label>
+                                      <label className="col-lg-8 col-form-label form-control-label">{fund.status==true?<p>Approved</p>:<p>Not Approved</p>}</label>
                                     </div>
 
 
