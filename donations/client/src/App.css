@@ -28,3 +28,11 @@
 .home-n{
   margin-top:  100px;
 }
+
+.profile{
+  position: absolute;
+  top:2%;
+  right: 0;
+  width: 120px;
+  transform: translateY(-50%);
+}
