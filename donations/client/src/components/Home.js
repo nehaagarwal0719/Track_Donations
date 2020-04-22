@@ -14,6 +14,7 @@ class Home extends Component {
       
      <Router>
 		    <div>
+		    
 		      <Route path="/fund" component={AddFund}/>
 		      <Route path="/donate" component={Donate}/>
 		      <Route path="/profile" component={Profile}/>
